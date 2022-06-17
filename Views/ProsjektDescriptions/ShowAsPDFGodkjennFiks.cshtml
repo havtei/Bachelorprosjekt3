@@ -1,0 +1,31 @@
+﻿@model Bachelorprosjekt.Models.ProsjektDescription
+
+@{
+    ViewData["Title"] = "Prosjektbeskrivelse";
+    var x = ViewData["sentFrom"].ToString();
+
+}
+
+<h1>Prosjektbeskrivelse</h1>
+
+<form class="margin-top-15 " asp-action="Godkjenn">
+    <input type="hidden" value="@Model?.Id" name="Id"/>
+    <input type="hidden" value="@x" name="sentFrom" />
+    <input class="form-control bg-green-009382 width-20 text-white" type="submit" value="Godkjenn prosjektforslag">
+</form>
+
+@{/*<form class="margin-top-15" asp-action="AnmodeFiks">
+    <input type="hidden" value="@Model?.Id" name="Id"/>
+    <div class="form-group">
+    <label class="control-label">Hva skal fikses?</label>
+    <input class="form-control"  type="text" name="kommentar" />
+    </div>
+    <br />
+    <div class="form-group">
+    <input type="submit" value="Anmode om fiksing av prosjektforslag"></input> 
+     </div>
+</form>*/
+}
+<br />
+<object data="/ProsjektDescriptions/getreport/@Html.DisplayFor(model => model.Id)" type="application/pdf" width="1200" height="1200">
+

@@ -1,0 +1,20 @@
+﻿@model Bachelorprosjekt.Models.ProsjektDescription
+
+@{
+    ViewData["Title"] = "Delete";
+    
+    //ViewData["Tilbake"] ="Index";
+}
+
+<h1>Slett prosjektbeskrivelse</h1>
+
+<h3>Er du sikker på at du vil slette denne?</h3>
+<br />
+<form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Slett" class="btn btn-danger" /> 
+        <a class="btn bg-blue-008AAF text-white" asp-action="@ViewData["Tilbake"]">Gå tilbake uten å slette</a>
+    </form>
+
+<object data="/ProsjektDescriptions/getreport/@Html.DisplayFor(model => model.Id)" type="application/pdf" width="1200" height="1200">
+

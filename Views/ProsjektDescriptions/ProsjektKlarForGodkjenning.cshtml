@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Bachelorprosjekt.Models.ProsjektDescription>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Prosjekt klar for godkjenning</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Navn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prosjektgiver)
+            </th>
+            
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Navn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prosjektgiver)
+            </td>
+           <td>
+            <a class="rounded-link-small bg-blue-008AAF text-white nav-link" asp-action="EditGodkjenn" asp-route-id="@item.Id">Rediger i skjema</a>
+             </td>
+            <td>
+                <form asp-action="ShowAsPDFGodkjennFiks">
+                <input type="hidden" name="Id" value="@item.Id" />
+                <input type="hidden" name="sentFrom" value="ProsjektKlarForGodkjenning" />
+                <input class="btn rounded-link-small bg-blue-008AAF text-white nav-link" type="submit" value="Vis PDF (og evt. godkjenn)" />
+                </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

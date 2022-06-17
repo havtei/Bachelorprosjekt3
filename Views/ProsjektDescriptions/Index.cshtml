@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Bachelorprosjekt.Models.ProsjektDescription>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Prosjektbeskrivelser</h1>
+
+<p>
+    <a asp-action="Create">Legg til (remove this...)</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Navn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prosjektgiver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Webadresse)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Navn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prosjektgiver)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Webadresse)
+            </td>
+            
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Rediger i skjema</a> |
+                <a asp-action="ShowAsPDF" asp-route-id="@item.Id">Vis PDF</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Slett</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "mssql3": {
+      "secretStore": "LocalSecretsFile",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/bachelorprosjektdbserver/databases/Bachelorprosjekt_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:azure"
+    },
+    "secrets1": {
+      "secretStore": null,
+      "resourceId": null,
+      "type": "secrets.user",
+      "connectionId": null
+    },
+    "mssql1": {
+      "ignored": "true",
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:azure2"
+    },
+    "mssql2": {
+      "ignored": "true",
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:BachelorprosjektContextConnection"
+    },
+    "mssql4": {
+      "ignored": "true",
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:BachelorprosjektContext"
+    }
+  }
+}

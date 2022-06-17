@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - Bachelorprosjekt</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css?v=eh-raZKus2rtGcQqHYesoHkYPeSdPqk4f-DW3EwQJ50" />
+    <link rel="stylesheet" href="/Bachelorprosjekt.styles.css?v=RGUi03JarcZQbTb4OLSkq7w5KYsU0Yajrvj2KhMlzFg" />
+</head>
+<body>
+    <header>
+        <nav b-8k8bvvs34u class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div b-8k8bvvs34u class="container-fluid">
+               
+                <button b-8k8bvvs34u class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span b-8k8bvvs34u class="navbar-toggler-icon"></span>
+                </button>
+                <div b-8k8bvvs34u class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul b-8k8bvvs34u class="navbar-nav flex-grow-1">
+                        <li b-8k8bvvs34u class="nav-item">
+                            <a class="nav-link text-dark" href="/">Hjem</a>
+                        </li>
+                        
+                        
+
+<ul class="navbar-nav">
+    <li class="nav-item">
+        <a id="manage" class="nav-link text-dark" title="Manage" href="/Identity/Account/Manage">hvardteigen@hotmail.com</a>
+    </li>
+    <li class="nav-item">
+        <form id="logoutForm" class="form-inline" action="/Identity/Account/Logout?returnUrl=%2F" method="post">
+            <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logg ut</button>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GXjvrj9VxBPnEce-iqGTz5SjNLmuUC3yVHTZhLQEOlyTdVwA3DRaW3lkFU5G9pRztijtXxVhsn11EZoLwLjNzHH6U5rC0uWpR3Dx2muxUIfGfqrgkUGJfartbnsj9mrjp6qi_7IgGQVBhipL-6rMvzeSBXsmDa_GAQc6zLupD4KYpTrrFgrKiXP5YhH7oSLZw" /></form>
+    </li>
+</ul>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div b-8k8bvvs34u class="container">
+        <main b-8k8bvvs34u role="main" class="pb-3">
+            
+<h1>Manage your account</h1>
+
+<div>
+    <h2>Change your account settings</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav nav-pills flex-column">
+    <li class="nav-item"><a class="nav-link active" id="profile" aria-current="page" href="/Identity/Account/Manage">Profile</a></li>
+    <li class="nav-item"><a class="nav-link" id="email" href="/Identity/Account/Manage/Email">Email</a></li>
+    <li class="nav-item"><a class="nav-link" id="change-password" href="/Identity/Account/Manage/ChangePassword">Password</a></li>
+    <li class="nav-item"><a class="nav-link" id="two-factor" href="/Identity/Account/Manage/TwoFactorAuthentication">Two-factor authentication</a></li>
+    <li class="nav-item"><a class="nav-link" id="personal-data" href="/Identity/Account/Manage/PersonalData">Personal data</a></li>
+</ul>
+
+        </div>
+        <div class="col-md-9">
+            
+
+<h3>Profile</h3>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <form id="profile-form" method="post">
+            
+            <div class="form-floating">
+                <input class="form-control" disabled type="text" id="Username" name="Username" value="hvardteigen@hotmail.com" />
+                <label class="form-label" for="Username">Username</label>
+            </div>
+            <div class="form-floating">
+                <input class="form-control" type="tel" data-val="true" data-val-phone="The Phone number field is not a valid phone number." id="Input_PhoneNumber" name="Input.PhoneNumber" value="" />
+                <label class="form-label" for="Input_PhoneNumber">Phone number</label>
+                <span class="text-danger field-validation-valid" data-valmsg-for="Input.PhoneNumber" data-valmsg-replace="true"></span>
+            </div>
+            <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GXjvrj9VxBPnEce-iqGTz5SjNLmuUC3yVHTZhLQEOlyTdVwA3DRaW3lkFU5G9pRztijtXxVhsn11EZoLwLjNzHH6U5rC0uWpR3Dx2muxUIfGfqrgkUGJfartbnsj9mrjp6qi_7IgGQVBhipL-6rMvzeSBXsmDa_GAQc6zLupD4KYpTrrFgrKiXP5YhH7oSLZw" /></form>
+    </div>
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+        </main>
+    </div>
+
+    <footer b-8k8bvvs34u class="border-top footer text-muted">
+        <div b-8k8bvvs34u class="container">
+            &copy; 2022 - Bachelorprosjekt - <a href="/Home/Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js?v=aW67-D5i6orDZqD6Lx6IYyjqpk0KWLMPcoo9ULy2UNw"></script>
+    
+    
+    
+    <script src="/Identity/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+
+
+
+
+
+<!-- Visual Studio Browser Link -->
+<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="6a11ac1eadb64fddbbffac5c44dc28bc"data-requestMappingFromServer="false" data-connectUrl="http://localhost:59319/d383df8b98324f0d9a45f0da9865370e/browserLink"></script>
+<!-- End Browser Link -->
+
+<script src="/_framework/aspnetcore-browser-refresh.js"></script></body>
+</html>

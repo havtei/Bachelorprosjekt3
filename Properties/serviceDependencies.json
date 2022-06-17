@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:azure"
+    },
+    "secrets1": {
+      "type": "secrets",
+      "connectionId": null
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:azure2"
+    }
+  }
+}

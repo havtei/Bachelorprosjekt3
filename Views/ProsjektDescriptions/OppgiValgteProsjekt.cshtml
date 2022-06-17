@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Bachelorprosjekt.Models.ProsjektDescription>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Kryss av valgte prosjekt, fra liste av godkjente prosjektforslag</h1>
+
+
+<table class="table margin-top-15">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Navn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prosjektgiver)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.ErValgt)
+            </th>
+           <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Navn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prosjektgiver)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.ErValgt)
+            </td>
+            
+            <td>
+
+                 <a class="rounded-link-small bg-blue-008AAF text-white nav-link" asp-action="ShowAsPDF" asp-route-id="@item.Id">Vis PDF</a> 
+                </td>
+                 <td>
+                <form asp-action="OppgiValgteProsjekt">
+                    <input type="hidden" value="@item.Id" name="id">
+                    <input class="form-control bg-green-CEF1CF" type="submit" value="Kryss av som valgt prosjekt">
+                </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

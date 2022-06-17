@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Bachelorprosjekt.Models.ProsjektDescription>
+
+@{
+    ViewData["Title"] = "Index";
+
+    //TODO remove
+    
+
+
+}
+
+<h1>Mine Prosjektbeskrivelser</h1>
+<br />
+<p>
+    <a style="font-size:18px;" class="margin-top-15 width-20 rounded-link-small bg-green-009382 text-white nav-link" asp-action="Create">Opprett nytt prosjektforslag</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Navn)
+            </th>
+             <th>Status</th>
+            <th>Er valgt</th>
+           <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Navn)
+            </td>
+            
+            
+                @{
+                    string test = "";
+                    switch (item.status)
+                    {
+                        case 1:
+                            test = "Ny";
+                            break;
+                            case 2:
+                            test = "Fiks";
+                            break;
+                        case 3:
+                            test = "Revidert";
+                            break;
+                        case 4:
+                            test = "Godkjent";
+                            break;
+
+                    }
+                }
+                <td>
+                @Html.Encode(test)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.ErValgt)
+            </td>
+            <td>
+                <a class="rounded-link-small bg-blue-008AAF text-white nav-link" asp-action="Edit" asp-route-id="@item.Id">Rediger</a>
+            </td>
+             <td>
+                <a class="rounded-link-small bg-blue-008AAF text-white nav-link" asp-action="ShowAsPDF" asp-route-id="@item.Id">Vis PDF</a>
+             </td>
+             <td>
+                <a class="rounded-link-small bg-orange-EB6851 text-white nav-link" asp-action="Delete" asp-route-id="@item.Id">Slett</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,56 @@
+﻿@model Bachelorprosjekt.Models.Oppdragsgiver
+
+@{
+    ViewData["Title"] = "Endre brukerdata";
+}
+
+<h1>Endre brukerdata</h1>
+
+<h4>Oppdragsgiver</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4 text-bold ">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label class="control-label">Navn</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group margin margin-top-15" >
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+          
+            <div class="form-group margin-top-15">
+                <label class="control-label">Beskrivelse</label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+      
+            <div class="form-group form-check margin-top-15">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> Er aktiv?
+                </label>
+            </div>
+           
+            <div class="form-group margin-top-15">
+                <label class="control-label">Antall innmeldte prosjekt</label>
+                <input asp-for="AntInnmeldteProsjekt" class="form-control" />
+                <span asp-validation-for="AntInnmeldteProsjekt" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Lagre" class="btn bg-green-009382 text-white margin-top-15" /> <a asp-action="Index" class="btn bg-blue-008AAF margin-top-15 text-white">Tilbake til liste, uten å lagre</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,9 @@
+﻿@model Bachelorprosjekt.Models.ProsjektDescription
+
+@{
+    ViewData["Title"] = "Prosjektbeskrivelse";
+    int a = 1;
+}
+
+<h1>Prosjektbeskrivelse</h1>
+<object data="/ProsjektDescriptions/getreport/@Html.DisplayFor(model => model.Id)" type="application/pdf" width="1200" height="1200">

@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/bachelorprosjektdbserver/databases/Bachelorprosjekt_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:azure2"
+    },
+    "mssql3": {
+      "ignored": "true",
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:azure"
+    },
+    "mssql2": {
+      "ignored": "true",
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:BachelorprosjektContextConnection"
+    },
+    "mssql4": {
+      "ignored": "true",
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:BachelorprosjektContext"
+    }
+  }
+}

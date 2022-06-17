@@ -1,0 +1,93 @@
+﻿@model Bachelorprosjekt.Models.ProsjektDescription
+
+@{
+    ViewData["Title"] = "Create";
+    
+    IEnumerable<ProjectType> ProjectTypes = ViewData["ProjectTypes"] as IEnumerable<ProjectType>;
+    IEnumerable<Domain> Domains = ViewData["Domains"] as IEnumerable<Domain>;
+
+}
+
+<h1>Forslag til Bachelorprosjekt ved Data- og Informasjonsteknologi-studiene for våren 2023.</h1>
+
+
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group margin-top-15">
+                <label class="control-label text-bold">Prosjektnavn</label>
+                <input asp-for="Navn" class="form-control" />
+                <span asp-validation-for="Navn" class="text-danger"></span>
+            </div>
+
+            <div class="form-group margin-top-15">
+                <label asp-for="Prosjektgiver" class="control-label text-bold"></label>
+                <input asp-for="Prosjektgiver" class="form-control" />
+                <span asp-validation-for="Prosjektgiver" class="text-danger"></span>
+            </div>
+
+            <div class="form-group margin-top-15">
+                <label asp-for="Webadresse"  class="control-label text-bold"></label>
+                <input asp-for="Webadresse" class="form-control" />
+                <span asp-validation-for="Webadresse" class="text-danger"></span>
+            </div>
+
+            <label class="text-bold" for="lokasjon">Lokasjon</label>
+            <select class="rounded-link-small bg-blue-008AAF text-white margin-top-15" name="lokasjon" id="lokasjon">
+                <option value="Internt Bergen">Internt Bergen</option>
+                <option value="Internt Førde">Internt Førde</option>
+                <option value="Eksternt Bergen">Eksternt Bergen</option>
+                <option value="Eksternt Førde">Eksternt Førde</option>
+                <option value="Reservert Bergen">Reservert Bergen</option>
+                <option value="Reservert Førde">Reservert Førde</option>
+            </select>
+
+            <div class="form-group margin-top-15">
+                <label  class="control-label text-bold">Kort intro om oppdragsgiver / arbeidsplass, hvis aktuelt også for gruppe med ansvar for prosjekt:</label>
+                <textarea id="IntroOppdragsgiver" name="IntroOppdragsgiver" rows="3" cols="100"></textarea>
+                <span asp-validation-for="IntroOppdragsgiver" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group margin-top-15">
+                <label  class="control-label text-bold">Kort beskrivelse av bakgrunn for prosjektet og hva prosjektet skal løse:</label>
+                <textarea id="BagrunnProsjekt" name="BagrunnProsjekt" rows="3" cols="100"></textarea>
+                <span asp-validation-for="BagrunnProsjekt" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group margin-top-15">
+                <label  class="control-label text-bold">Eventuelt, teknologier / metoder som er tenkt brukt i prosjektet.</label>
+                <textarea id="TeknologiMetoder" name="TeknologiMetoder" rows="3" cols="100"></textarea>
+                <span asp-validation-for="TeknologiMetoder" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group margin-top-15">
+                <label  class="control-label text-bold">Beskrivelse av arbeidsoppgaver for studentene:</label>
+               <textarea id="Arbeidsoppgaver" name="Arbeidsoppgaver" rows="3" cols="100"></textarea>
+
+                <span asp-validation-for="Arbeidsoppgaver" class="text-danger"></span>
+            </div>
+
+            <div class="form-group margin-top-15">
+                <label  class="control-label text-bold">Annet(arbeidsplass, arbeidsspråk, hvorfor skal studenten velge dette prosjektet?</label>
+                <textarea id="Annet" name="Annet" rows="3" cols="100"></textarea>
+                <span asp-validation-for="Annet" class="text-danger"></span>
+            </div>
+           
+
+            <div class="form-group margin-top-15">
+                <input class="btn bg-green-009382 text-white" type="submit" value="Lagre" name="submit" id="Lagre" />  <a class="btn text-white bg-orange-EB6851 " asp-action="GetMyProjects">Tilbake til liste, uten å lagre</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
